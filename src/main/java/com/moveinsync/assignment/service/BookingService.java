@@ -41,13 +41,15 @@ public class BookingService {
 
         String bookingRef = UUID.randomUUID().toString();
 
+        String routeSummary = pathResult.getSegments().toString();
+
         Booking booking = Booking.builder()
                 .bookingReference(bookingRef)
                 .sourceStop(source)
                 .destinationStop(destination)
                 .totalTravelTime(pathResult.getTotalCost())
-                .totalTransfers(0) // can enhance later
-                .routeSummary(pathResult.getStopIds().toString())
+                .totalTransfers(pathResult.getTotalTransfers())
+                .routeSummary(routeSummary)
                 .status("CONFIRMED")
                 .createdAt(LocalDateTime.now())
                 .build();

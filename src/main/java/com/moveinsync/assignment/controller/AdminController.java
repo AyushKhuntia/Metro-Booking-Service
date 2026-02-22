@@ -49,7 +49,7 @@ public class AdminController {
         );
     }
 
-    // 3️⃣ Add RouteStop
+
     @PostMapping("/route-stop")
     public ResponseEntity<RouteStop> addRouteStop(@RequestBody RouteStopRequest request) {
         return ResponseEntity.ok(

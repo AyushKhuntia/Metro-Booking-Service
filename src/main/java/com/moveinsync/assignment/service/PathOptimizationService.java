@@ -23,7 +23,7 @@ public class PathOptimizationService {
 
     private MetroGraph metroGraph;
     private final DijkstraEngine engine = new DijkstraEngine();
-
+// after the bean is created and dependencies are injected, but before the application starts serving requests.
     @PostConstruct
     public void loadGraph() {
 
